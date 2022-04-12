@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import DetailsForm from "../../components/RestForm";
+import DetailsForm from "../RestaurantForm";
 import Header from "../../components/Header";
-import Register from "../Register";
+import RestaurantForm from "../RestaurantForm";
 
 const Home = () => {
   const [grayHeader, setGrayHeader] = useState(false);
@@ -24,17 +24,6 @@ const Home = () => {
   return (
     <div>
       <Header gray={grayHeader} />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        <Register />
-        <DetailsForm />
-      </div>
     </div>
   );
 };

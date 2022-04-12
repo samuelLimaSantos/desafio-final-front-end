@@ -1,6 +1,6 @@
 interface InputProps {
-  name?: string;
-  type?: string;
+  name: string;
+  type: string;
   required?: boolean;
   value?: string | number;
   placeholder?: string;
@@ -16,14 +16,16 @@ const Input = ({
   onChange,
 }: InputProps) => {
   return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      name={name}
-      required={required}
-      value={value}
-      onChange={onChange}
-    />
+    <div className="input">
+      <input
+        type={type}
+        placeholder={placeholder}
+        name={name}
+        required={required}
+        value={value}
+        onChange={onChange}
+      />
+    </div>
   );
 };
 

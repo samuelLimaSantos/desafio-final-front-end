@@ -11,9 +11,9 @@ export default ({ gray } : any) => {
             <div className='header--logo'>
                 <a href='/'>
                     <img src={jason_foods} alt='jason foods logo' />
-                    <span>
-                        <img src={icon_foods} alt='icon-foods' />
-                    </span>
+                    
+                        <img src={icon_foods} alt='icon-foods' id="run"/>
+                   
                     
                 </a>
             </div>

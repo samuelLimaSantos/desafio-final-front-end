@@ -1,34 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import Header from '../../components/Header';
-
+import React, { useEffect, useState } from "react";
+import Header from "../../components/Header";
+import Register from "../Register";
 
 const Home = () => {
-
-  const [grayHeader, setGrayHeader] = useState(false)
-
+  const [grayHeader, setGrayHeader] = useState(false);
 
   useEffect(() => {
     const scrollListener = () => {
       if (window.scrollY > 10) {
-        setGrayHeader(true)
+        setGrayHeader(true);
       } else {
-        setGrayHeader(false)
+        setGrayHeader(false);
       }
-    }
-    window.addEventListener('scroll', scrollListener);
+    };
+    window.addEventListener("scroll", scrollListener);
 
     return () => {
-      window.removeEventListener('scroll', scrollListener);
-    }
+      window.removeEventListener("scroll", scrollListener);
+    };
   }, []);
-
 
   return (
     <div>
       <Header gray={grayHeader} />
-      
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Register />
+      </div>
     </div>
-
   );
 };
 

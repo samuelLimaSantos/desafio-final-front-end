@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Shop from '../../components/Shop';
+import React, { useEffect, useState } from "react";
+import Shop from "../../components/Shop";
 
-import API from '../../API'
+import API from "../../API";
+import RestaurantForm from "../RestaurantForm";
 
 const Home = () => {
-
   const [listRestaurants, setListRestaurants] = useState([]);
 
-/*  
+  /*  
     useEffect(() => {
     const loadAll = async () => {
       //pegando a lista inteira
@@ -20,15 +20,12 @@ const Home = () => {
 */
   return (
     <div>
-
       {/* <section className='lists'>
         {listRestaurants.map((item, key) =>(
           <Shop key={key} title={item.title} items={item.items} />
         ))}
       </section> */}
-
     </div>
-
   );
 };
 

@@ -45,18 +45,21 @@ header.gray {
     border-radius: 3px;
 }
 
-.header--button a {
+.header--button button {
     text-decoration: none;
     padding: 5px 10px 8px 10px;
     border-radius: 5px;
     color: #fff;
     background-color: #ea1d2c;
+    border: none;
+    cursor: pointer;
 }
 
-.header--button a:hover {
+.header--button button:hover {
     animation-name: color-click;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
+    
 }
 
 @keyframes color-click {

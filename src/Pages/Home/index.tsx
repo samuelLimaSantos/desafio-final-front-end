@@ -6,6 +6,7 @@ const Home = () => {
 
   const [grayHeader, setGrayHeader] = useState(false)
 
+
   useEffect(() => {
     const scrollListener = () => {
       if (window.scrollY > 10) {
@@ -20,10 +21,11 @@ const Home = () => {
       window.removeEventListener('scroll', scrollListener);
     }
   }, []);
+
+
   return (
     <div>
       <Header gray={grayHeader} />
-      
       
     </div>
 

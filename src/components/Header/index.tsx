@@ -12,9 +12,7 @@ export default ({ gray } : any) => {
                 <a href='/'>
                     <img src={jason_foods} alt='jason foods logo' />
                     
-                        <img src={icon_foods} alt='icon-foods' id="run"/>
-                   
-                    
+                        <img src={icon_foods} alt='icon-foods' id="run"/>                    
                 </a>
             </div>
             <div className='header--button'>

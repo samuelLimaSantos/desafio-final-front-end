@@ -2,12 +2,11 @@
 
 * {
     box-sizing: border-box;
-}
-
-body {
-    background-color: #f7f8fa;
     color: #3f3e3e;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: #fff;
 }
+
+
 

@@ -25,7 +25,6 @@ header.gray {
     height: 100%;
 }
 
-
 #run{
     position: relative;
     left: 20%;
@@ -37,7 +36,7 @@ header.gray {
 @keyframes runner{
     10% {
         left: 80%;
-        transition: all ease 2.5s;
+        transition: all ease 0.5s;
         opacity: 0.3;
     }
 }

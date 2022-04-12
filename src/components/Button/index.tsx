@@ -1,12 +1,13 @@
-interface ButtonProps {
-  name: "string";
-  onClick: () => void;
+import { ButtonHTMLAttributes } from "react";
+
+interface ButtonProps extends ButtonHTMLAttributes <HTMLButtonElement> {
+  name: string;
 }
 
-const Button = ({ onClick, name }: any) => {
+const Button = ({ name, ...rest }: ButtonProps) => {
   return (
     <div>
-      <button onClick={onClick}>{name}</button>
+      <button {...rest}>{name}</button>
     </div>
   );
 };

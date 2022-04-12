@@ -33,6 +33,7 @@ const App = () => {
 
             <BrowserRouter>
                 <Header gray={grayHeader} />
+                
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/restaurant' element={<Restaurant />} />

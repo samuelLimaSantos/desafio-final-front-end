@@ -4,7 +4,11 @@ import icon_foods from '../../assets/fastdelivery.png';
 
 import './style.css'
 
-export default ({ gray } : any) => {
+interface Header {
+    gray: boolean;
+}
+
+export default ({ gray } : Header) => {
     return(
         <header className={gray ? 'gray' : ''}>
 

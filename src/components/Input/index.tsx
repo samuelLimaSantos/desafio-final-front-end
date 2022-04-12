@@ -1,10 +1,10 @@
 interface InputProps {
-  name: string;
-  type: string;
+  name?: string;
+  type?: string;
   required?: boolean;
-  value: string | number;
-  placeholder: string;
-  onChange: () => void;
+  value?: string | number;
+  placeholder?: string;
+  onChange?: () => void;
 }
 
 const Input = ({

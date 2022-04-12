@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DetailsForm from "../../components/RestForm";
 import Header from "../../components/Header";
 import Register from "../Register";
 
@@ -32,6 +33,7 @@ const Home = () => {
         }}
       >
         <Register />
+        <DetailsForm />
       </div>
     </div>
   );

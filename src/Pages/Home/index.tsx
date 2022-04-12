@@ -23,7 +23,8 @@ const Home = () => {
 
   return (
     <div>
-      <Header gray={grayHeader} />
+      {/* <Header gray={grayHeader} /> */}
+      <RestaurantForm />
     </div>
   );
 };

@@ -1,11 +1,6 @@
-interface InputProps {
-  name: string;
-  type: string;
-  required?: boolean;
-  value?: string | number;
-  placeholder?: string;
-  onChange?: () => void;
-}
+import { InputHTMLAttributes } from "react";
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = ({
   name,

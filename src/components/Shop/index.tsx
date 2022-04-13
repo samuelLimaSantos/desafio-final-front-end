@@ -5,28 +5,29 @@ import api from '../../services/api';
 import './style.css'
 
 
-interface Shop extends HTMLAttributes<HTMLDivElement>{
-    items: [];
+interface Shop extends HTMLAttributes<HTMLDivElement> {
+    id: string;
+    name: string;
+    address: string;
+    urlLogo: string;
 }
 
-const Shop = ({ items }: Shop) => {
+const Shop = ({ id, name, address, urlLogo, ...rest }: Shop) => {
 
-    const [restaurants, setRestaurants] = useState([]);
+    const [restaurants, setRestaurants] = useState();
 
     useEffect(() => {
-        api.get('restaurants').then(({data}) => {
-            setRestaurants(data)
+        api.get('restaurants').then((response) => {
+            setRestaurants(response.data)
         })
     }, []);
     console.log(restaurants)
 
     return (
-        <div className='shop--listarea'>
-            <h2>{items}</h2>
+        <div className='shop--listarea' {...rest}>
+            <h2>{name}</h2>
             <div className='shop--list'>
-                {restaurants?.map((restaurant, key) => ({
-                    
-                }))}
+                
             </div>
 
         </div>

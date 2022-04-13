@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app";
-
-import './global.css'
+import "./global.css";
+import Router from "./routes";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>,
   document.getElementById("root")
 );

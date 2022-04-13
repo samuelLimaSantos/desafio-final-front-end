@@ -15,7 +15,7 @@ export default ({ gray }: Header) => {
   return (
     <header className={gray ? "gray" : ""}>
       <div className="header--logo">
-        <a href="/">
+        <a onClick={() => navigate("/")}>
           <img src={jason_foods} alt="jason foods logo" />
           <img src={icon_foods} alt="icon-foods" id="run" />
         </a>

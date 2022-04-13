@@ -1,7 +1,12 @@
 .container-product{
     position: fixed;
-    top:20%;
-    height: 50vh;
+    top:0;
+    right: 0;
+    height: 100vh;
     background-color: #fff;
-    width: 40%;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

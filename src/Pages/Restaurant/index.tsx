@@ -8,10 +8,10 @@ import "./style.css";
 const Restaurant = () => {
   const navigation = useNavigate();
 
-  const { name, urlImage, description, urlCover, menu } = RestaurantReady[6];
+  const { name, urlImage, description, urlCover, menu } = RestaurantReady[2];
   const [modal, setModal] = useState(false);
   const handleModal = ({}) => {
-    setModal(true);
+    setModal(!modal);
   };
   return (
     <div className="container">
@@ -47,7 +47,7 @@ const Restaurant = () => {
             <Button name="Adicionar item ao menu" onClick={handleModal} />
           </div>
         </div>
-        {modal && <ProductForm />}
+        {modal && <ProductForm handleModal={handleModal} />}
       </div>
     </div>
   );

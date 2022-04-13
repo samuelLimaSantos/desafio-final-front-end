@@ -52,11 +52,13 @@ export const InputProduct = [
     extras: {
       name: "Molho Especial",
       price: 3,
+      type: "checkbox",
     },
     name: "Bacon",
     price: 2.5,
+    type: "checkbox",
   },
-  { name: "Cebola", price: 1.5 },
+  { name: "Cebola", price: 1.5, type: "checkbox" },
 ];
 
 export const RestaurantReady = [

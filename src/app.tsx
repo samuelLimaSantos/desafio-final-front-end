@@ -8,7 +8,6 @@ import Home from "./Pages/Home";
 
 const App = () => {
 
-    const [listRestaurants, setListRestaurants] = useState([]);
     const [grayHeader, setGrayHeader] = useState(false)
 
 
@@ -33,17 +32,10 @@ const App = () => {
 
             <BrowserRouter>
                 <Header gray={grayHeader} />
-                
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/restaurant' element={<Restaurant />} />
                 </Routes>
-                {/* <section className='lists'>
-            {listRestaurants.map((item, key) =>(
-              <Shop key={key} title={item.title} items={item.items} />
-            
-              ))}
-          </section> */}
             </BrowserRouter>
         </div>
 

@@ -2,8 +2,6 @@ import React from 'react';
 
 //import Shop from '../../components/Shop';
 
-import API from '../../API'
-
 const Restaurant = () => {
 
   return (

@@ -46,7 +46,7 @@ const PopularRestaurants = () => {
                     <div className="card">
                         <img className="card--image" src={item.urlImage} />
                         <p className="card--name">{item.name}</p>
-                        <p className="card--description">{item.description}</p>
+                        {/* <p className="card--description">{item.description}</p> */}
                         <p className="card--address">{item.address}</p>
                     </div>
                 ))}

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Shop from "../../components/Shop";
 
 //import RestaurantForm from "../RestaurantForm";
 import Header from "../../components/Header";
 import Recommended from "../../components/Recommended";
-import PopularRestaurants from "../../components/Shop";
+import PopularRestaurants from "../../components/PopularRestaurants";
 
 const Home = () => {
   

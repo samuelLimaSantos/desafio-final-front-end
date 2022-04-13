@@ -6,7 +6,7 @@ const ProductForm = ({ handleModal }: any) => {
   return (
     <div className="container-product">
       <button onClick={handleModal}>X</button>
-      <h1>Registre-se</h1>
+      <h1>Registre um novo item</h1>
       <form action="">
         {InputProduct.map((item) => (
           <div>

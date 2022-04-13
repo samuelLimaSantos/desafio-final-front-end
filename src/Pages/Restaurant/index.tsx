@@ -8,7 +8,7 @@ import "./style.css";
 const Restaurant = () => {
   const navigation = useNavigate();
 
-  const { name, urlImage, description, urlCover, menu } = RestaurantReady[6];
+  const { name, urlImage, description, urlCover, menu } = RestaurantReady[2];
   const [modal, setModal] = useState(false);
   const handleModal = ({}) => {
     setModal(!modal);

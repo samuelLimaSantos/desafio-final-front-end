@@ -3,7 +3,7 @@ import Back from "../../assets/icons/button-back.svg";
 const Restaurant = () => {
   const navigation = useNavigate();
   return (
-    <div>
+    <div className="container">
       <div
         onClick={() => {
           navigation("/");
@@ -12,7 +12,6 @@ const Restaurant = () => {
       >
         <img src={Back} alt="" />
       </div>
-      <h1>Aqui vai o restaurante selecionado</h1>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Shop from "../../components/Shop";
 import API from "../../API";
 import RestaurantForm from "../RestaurantForm";
 import Header from "../../components/Header";
+import Destak from "../../components/Destak";
 
 const Home = () => {
   const [listRestaurants, setListRestaurants] = useState([]);
@@ -22,6 +23,7 @@ const Home = () => {
   return (
     <div>
       <Header gray />
+      <Destak />
       {/* <section className='lists'>
         {listRestaurants.map((item, key) =>(
           <Shop key={key} title={item.title} items={item.items} />

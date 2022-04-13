@@ -82,9 +82,9 @@ export const RestaurantReady = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
   },
   {
-    name: "Pastel Chef",
+    name: "Tiburcio",
     urlImage:
-      "https://blog.agenciadosite.com.br/wp-content/uploads/2017/02/Pastel-Chef-L-SF-e1486724164401.jpg",
+      "https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2018%2F04%2F26%2F19%2FLogo-239062_68710_192204089_393461643.jpg",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
   },

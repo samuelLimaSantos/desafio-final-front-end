@@ -68,6 +68,23 @@ export const RestaurantReady = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
     urlCover:
       "https://img.elo7.com.br/product/zoom/2634D35/painel-adesivo-comida-japonesa-prato-parede-sushi-sashimi-japonesa.jpg",
+    menu: [
+      {
+        nome: "Sushi de salmão",
+        img: "https://media-cdn.tripadvisor.com/media/photo-s/0e/1e/39/45/sushi-de-salmao.jpg",
+        price: 5,
+      },
+      {
+        nome: "Sushi frito",
+        img: "https://t2.rg.ltmcdn.com/pt/posts/4/3/5/hot_roll_com_cream_cheese_5534_600_square.jpg",
+        price: 3,
+      },
+      {
+        nome: "Temaki",
+        img: "https://s2.glbimg.com/Eh15YIkGVrBFEcizCkxF1r4OjKo=/e.glbimg.com/og/ed/f/original/2021/07/21/344587_original.jpg",
+        price: 20,
+      },
+    ],
   },
   {
     name: "Italian Food",
@@ -105,6 +122,7 @@ export const RestaurantReady = [
     urlCover:
       "http://blogdeclara.com/wp-content/uploads/2016/10/restaurantes-de-comida-nordestina-em-sa%CC%83o-paulo-e1475638918378-1024x679.jpg",
   },
+
   {
     name: "Zé Coxinha",
     urlImage:

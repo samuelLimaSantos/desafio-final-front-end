@@ -1,13 +1,18 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Back from "../../assets/icons/button-back.svg";
 import Button from "../../components/Button";
+import ProductForm from "../../components/ProductForm";
 import { RestaurantReady } from "../../Mocks/input";
 import "./style.css";
 const Restaurant = () => {
   const navigation = useNavigate();
 
-  const { name, urlImage, description, urlCover, menu } = RestaurantReady[0];
-
+  const { name, urlImage, description, urlCover, menu } = RestaurantReady[6];
+  const [modal, setModal] = useState(false);
+  const handleModal = ({}) => {
+    setModal(true);
+  };
   return (
     <div className="container">
       <div
@@ -39,9 +44,10 @@ const Restaurant = () => {
                 </div>
               ))}
             </div>
-            <Button name="Adicionar item ao menu" />
+            <Button name="Adicionar item ao menu" onClick={handleModal} />
           </div>
         </div>
+        {modal && <ProductForm />}
       </div>
     </div>
   );

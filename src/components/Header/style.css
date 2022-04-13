@@ -1,5 +1,6 @@
 header {
-    position: relative;
+    position: fixed;
+    z-index: 999;
     top: 0px;
     left: 0;
     right: 0;

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Joti+One&family=Roboto:wght@400;700&display=swap');
+
+.title{
+    width: 80%;
+    margin-top: 130px;
+    margin-left: 10%;
+    margin-bottom: 15px;
+}
+
+.jasonfoods{
+    font-family: 'Joti One', 'Roboto', sans-serif;
+    color: #EA1D2C;
+    text-shadow: 1px 1px #F5EE3B;
+}
+
+.container-restaurant{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: -20px;
+
+}
+.restaurant-img{
+    width: 200px;
+    cursor: pointer;
+    
+}
+.restaurant-img img {
+    width: 100%;
+    height: 200px;
+    border-radius: 50%;
+}
+#selo{
+    width: 40px;
+    height: auto;
+    position: absolute;
+    display: flex;
+    margin-left: 170px;
+    margin-top: 20px;
+    
+}

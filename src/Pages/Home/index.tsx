@@ -3,6 +3,8 @@ import Shop from "../../components/Shop";
 
 //import RestaurantForm from "../RestaurantForm";
 import Header from "../../components/Header";
+import Recommended from "../../components/Recommended";
+import PopularRestaurants from "../../components/Shop";
 
 const Home = () => {
   
@@ -27,7 +29,8 @@ const Home = () => {
   return (
     <div>
       <Header gray={grayHeader} />
-      {/* <Shop items={[]}/> */}
+      <Recommended />
+      <PopularRestaurants />
     </div>
   );
 };

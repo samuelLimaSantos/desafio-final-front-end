@@ -6,7 +6,6 @@ import Header from "../../components/Header";
 import Recommended from "../../components/Recommended";
 import PopularRestaurants from "../../components/PopularRestaurants";
 import Footer from "../../components/Footer";
-import Destak from "../../components/Destak";
 
 const Home = () => {
   const [detach, setDetach] = useState([]);
@@ -27,8 +26,9 @@ const Home = () => {
   return (
     <div>
       <Header gray />
-      {/* <Destak detach={detach} /> */}
       <Recommended detach={detach} />
+      <PopularRestaurants />
+      <Footer />
     </div>
   );
 };

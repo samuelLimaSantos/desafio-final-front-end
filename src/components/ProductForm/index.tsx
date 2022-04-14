@@ -3,19 +3,25 @@ import { InputProduct } from "../../Mocks/input";
 import Button from "../atom/Button";
 import Input from "../atom/Input";
 import axios from "../../service";
-const ProductForm = ({ handleModal }: any) => {
+import { useNavigate } from "react-router-dom";
+const ProductForm = ({ handleModal, restaurant }: any) => {
+  const navigation = useNavigate();
+  const handleForm = () => {
+    navigation(`product/${restaurant}`);
+  };
   const sendData = async (e: any) => {
     try {
       e.preventDefault();
-      const { name, urlImage, price, idRestaurant, description } =
-        e.target.elements;
+      const { name, urlImage, price, description } = e.target.elements;
       const data: any = {
         name: name.value,
         urlImage: urlImage.value,
-        price: price.value,
-        idRestaurant: idRestaurant.value,
+        price: parseInt(price.value),
+        idRestaurant: restaurant,
         description: description.value,
+        extras: [],
       };
+      console.log(typeof parseInt(price.value));
       const resp = await axios.post("/rest/products", data);
       console.log(resp);
     } catch (err) {

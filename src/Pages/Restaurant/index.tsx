@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Back from "../../assets/icons/button-back.svg";
 import Button from "../../components/atom/Button";
 import ProductForm from "../../components/ProductForm";
-import axios from '../../service';
+import axios from "../../service";
 import { RestaurantType } from "../../types/Restaurant";
 import "./style.css";
 
@@ -15,24 +15,23 @@ const Restaurant = () => {
   const handleModal = ({}) => {
     setModal(!modal);
   };
-  
+
   const location = useLocation();
-  
+
   useEffect(() => {
     const restaurantState = location.state as any;
 
-    if ('id' in restaurantState) {
+    if ("id" in restaurantState) {
       handleRestaurantData(restaurantState.id);
     }
-
   }, []);
 
   const handleRestaurantData = useCallback(async (restaurantId: string) => {
     const { data } = await axios.get(`rest/restaurants/${restaurantId}`);
 
     setRestaurant(data);
-  }, [])
-  
+  }, []);
+
   return (
     <div className="container">
       <div
@@ -43,7 +42,7 @@ const Restaurant = () => {
       >
         <img src={Back} alt="" />
       </div>
-      {'id' in restaurant && (
+      {"id" in restaurant && (
         <div className="container-rest">
           <img className="url-cover" src={restaurant.urlCover} />
           <div className="card-info">
@@ -64,11 +63,9 @@ const Restaurant = () => {
                     </div>
                     <p>Preço:R$ {item.price},00</p>
                     <div>
-                      Extras: 
-                      {item.extras.map(extra => (
-                        <span>
-                          {extra.name}
-                        </span>
+                      Extras:
+                      {item.extras.map((extra) => (
+                        <span>{extra.name}</span>
                       ))}
                     </div>
                   </div>
@@ -77,7 +74,9 @@ const Restaurant = () => {
               <Button name="Adicionar item ao menu" onClick={handleModal} />
             </div>
           </div>
-          {modal && <ProductForm handleModal={handleModal} />}
+          {modal && (
+            <ProductForm restaurant={restaurant.id} handleModal={handleModal} />
+          )}
         </div>
       )}
     </div>

@@ -16,9 +16,9 @@ const Restaurant = () => {
     setModal(!modal);
   };
 
-  const formatter = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL' 
+  const formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
   });
 
   const location = useLocation();
@@ -55,6 +55,7 @@ const Restaurant = () => {
               <img src={restaurant.urlLogo} alt="" />
               <h1>{restaurant.name}</h1>
               <h5>{restaurant.description}</h5>
+              <h5>{restaurant.address}</h5>
               <h6>Responsável: {restaurant.responsible}</h6>
             </div>
             <div className="menu-container">
@@ -73,7 +74,9 @@ const Restaurant = () => {
                             <span>{extra.name}</span>
                           ))}
                         </p>
-                        <p className="price">Preço:R$ {formatter.format(item.price)}</p>
+                        <p className="price">
+                          Preço:R$ {formatter.format(item.price)}
+                        </p>
                       </div>
                     </div>
                   </div>

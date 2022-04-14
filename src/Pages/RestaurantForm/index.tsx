@@ -5,9 +5,31 @@ import Logo from "../../components/Logo";
 import Button from "../../components/Button";
 import Back from "../../assets/icons/button-back.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "../../service";
 
 const RestaurantForm = () => {
   const navigation = useNavigate();
+
+  const sendData = async (e: any) => {
+    try {
+      e.preventDefault();
+      const { name, address, urlLogo, urlCover, description, responsible } =
+        e.target.elements;
+      const data: any = {
+        name: name.value,
+        address: address.value,
+        urlLogo: urlLogo.value,
+        urlCover: urlCover.value,
+        description: description.value,
+        responsible: responsible.value,
+      };
+      const resp = await axios.post("/rest/restaurants", data);
+      console.log(resp);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="container">
       <div
@@ -24,7 +46,7 @@ const RestaurantForm = () => {
       <div className="container-form ">
         <div className="card-form">
           <h1>Registre-se</h1>
-          <form>
+          <form onSubmit={sendData}>
             {InputRest.map((item) => (
               <Input
                 type={item.type}
@@ -38,7 +60,7 @@ const RestaurantForm = () => {
               placeholder="Descrição do Restaurante"
             ></textarea>
 
-            <Button name="Cadastrar" type="submit" onClick={() => {}} />
+            <Button name="Cadastrar" type="submit" />
           </form>
         </div>
       </div>

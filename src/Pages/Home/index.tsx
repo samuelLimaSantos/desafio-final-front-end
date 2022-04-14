@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Recommended from "../../components/Recommended";
 import PopularRestaurants from "../../components/PopularRestaurants";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   
@@ -30,6 +31,7 @@ const Home = () => {
       <Header gray={grayHeader} />
       <Recommended />
       <PopularRestaurants />
+      <Footer/>
     </div>
   );
 };

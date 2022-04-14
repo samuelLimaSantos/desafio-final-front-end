@@ -5,19 +5,19 @@ import Input from "../Input";
 const ProductForm = ({ handleModal }: any) => {
   return (
     <div className="container-product">
-      <button onClick={handleModal}>X</button>
-      <h1>Registre um novo item</h1>
-      <form action="">
+      <button className="button--register--item" onClick={handleModal}>X</button>
+      <h2>Registre um novo item</h2>
+      <form className="container--form" action="">
         {InputProduct.map((item) => (
-          <div>
-            <Input
+          <div className="container--input">
+            <Input 
               placeholder={item.placeholder}
               name={item.name}
               type={item.type}
             />
           </div>
         ))}
-        <Button name=" Cadastrar" type="submit" />
+        <Button className="button--register--item" name="Cadastrar" type="submit" />
       </form>
     </div>
   );

@@ -1,5 +1,7 @@
 import { InputHTMLAttributes } from "react";
 
+import './style.css'
+
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = ({
@@ -12,7 +14,7 @@ const Input = ({
 }: InputProps) => {
   return (
     <div className="input">
-      <input
+      <input 
         type={type}
         placeholder={placeholder}
         name={name}

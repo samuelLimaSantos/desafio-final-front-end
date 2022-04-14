@@ -2,11 +2,62 @@
     position: fixed;
     top:0;
     right: 0;
+    width: 100vw;
     height: 100vh;
-    background-color: #fff;
+    background-color: #f7f8fa;
     width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+.container-product h2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.container--form{
+    width: 65%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container--input{
+    width: 100%;  
+}
+
+.container--input Input{
+    border: 1.5px solid #ea1d2c;
+    border-radius: 8px;
+    width: 100%;
+    height: 30px;
+    
+}
+
+.button--register--item{
+    height: 35px;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 5px 10px 8px 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #ea1d2c;
+    border: none;
+    cursor: pointer;
+}
+
+.button--register--item:hover{
+    animation-name: color-click;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes color-click {
+    100% {
+        background-color: #ff0000;
+    }
 }

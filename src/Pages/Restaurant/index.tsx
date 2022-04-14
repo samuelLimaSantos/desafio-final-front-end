@@ -1,21 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Back from "../../assets/icons/button-back.svg";
 import Button from "../../components/atom/Button";
 import ProductForm from "../../components/ProductForm";
 import { RestaurantReady } from "../../Mocks/input";
+import axios from '../../service';
+import { RestaurantType } from "../../types/Restaurant";
 import "./style.css";
 
 const Restaurant = () => {
   const navigation = useNavigate();
 
   const { name, urlImage, description, urlCover, menu } = RestaurantReady[2];
+  const [restaurant, setRestaurant] = useState({} as RestaurantType);
   const [modal, setModal] = useState(false);
   const handleModal = ({}) => {
     setModal(!modal);
   };
+  
   const location = useLocation();
-  console.log(location);
+  
+  useEffect(() => {
+    const restaurantState = location.state as any;
+
+    if ('id' in restaurantState) {
+      handleRestaurantData(restaurantState.id);
+    }
+
+  }, []);
+
+  const handleRestaurantData = useCallback(async (restaurantId: string) => {
+    const { data } = await axios.get(`rest/restaurants/${restaurantId}`);
+
+    setRestaurant(data);
+  }, [])
+  
   return (
     <div className="container">
       <div
@@ -26,32 +45,43 @@ const Restaurant = () => {
       >
         <img src={Back} alt="" />
       </div>
-      <div className="container-rest">
-        <img className="url-cover" src={urlCover} />
-        <div className="card-info">
-          <div className="description">
-            <img src={urlImage} alt="" />
-            <h1>{name}</h1>
-            <h5>{description}</h5>
-          </div>
-          <div className="menu-container">
-            <h1>Cardápio</h1>
-            <div className="scroll">
-              {menu?.map((item) => (
-                <div className="menu">
-                  <div className="menu-item">
-                    <img src={item.img} />
-                    {item.nome}
-                  </div>
-                  <p>Preço:R$ {item.price},00</p>
-                </div>
-              ))}
+      {'id' in restaurant && (
+        <div className="container-rest">
+          <img className="url-cover" src={urlCover} />
+          <div className="card-info">
+            <div className="description">
+              <img src={restaurant.urlLogo} alt="" />
+              <h1>{restaurant.name}</h1>
+              <h5>{restaurant.description}</h5>
+              <h6>Responsável: {restaurant.responsible}</h6>
             </div>
-            <Button name="Adicionar item ao menu" onClick={handleModal} />
+            <div className="menu-container">
+              <h1>Cardápio</h1>
+              <div className="scroll">
+                {restaurant.products?.map((item) => (
+                  <div className="menu">
+                    <div className="menu-item">
+                      <img src={item.urlImage} />
+                      {item.name}
+                    </div>
+                    <p>Preço:R$ {item.price},00</p>
+                    <div>
+                      Extras: 
+                      {item.extras.map(extra => (
+                        <span>
+                          {extra.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Button name="Adicionar item ao menu" onClick={handleModal} />
+            </div>
           </div>
+          {modal && <ProductForm handleModal={handleModal} />}
         </div>
-        {modal && <ProductForm handleModal={handleModal} />}
-      </div>
+      )}
     </div>
   );
 };

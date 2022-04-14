@@ -59,14 +59,17 @@ const Restaurant = () => {
                   <div className="menu">
                     <div className="menu-item">
                       <img src={item.urlImage} />
-                      {item.name}
-                    </div>
-                    <p>Preço:R$ {item.price},00</p>
-                    <div>
-                      Extras:
-                      {item.extras.map((extra) => (
-                        <span>{extra.name}</span>
-                      ))}
+                      <div className="description-product">
+                        <h3>{item.name}</h3>
+                        <p>{item.description}</p>
+                        <p>
+                          Extras:
+                          {item.extras.map((extra) => (
+                            <span>{extra.name}</span>
+                          ))}
+                        </p>
+                        <p className="price">Preço:R$ {item.price},00</p>
+                      </div>
                     </div>
                   </div>
                 ))}

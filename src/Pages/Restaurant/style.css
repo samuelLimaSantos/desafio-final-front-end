@@ -18,6 +18,7 @@
   display: flex;
   align-self: center;
   width: 100%;
+  height: auto;
 }
 .url-cover {
   width: 100%;
@@ -39,7 +40,7 @@
 .card-info img {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius:4px;
 }
 .description,
 .menu-container {
@@ -52,13 +53,16 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  height: 450px;
+  height:70vh;
   overflow: auto;
+}
+.menu-container{
+  width: 40%;
 }
 
 .menu-container img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 60px;
 }
 .menu-container button {
   width: 100%;
@@ -71,24 +75,50 @@
   color: #dc5f20;
   cursor: pointer;
   border: 2px solid #dc5f20;
-  margin-top: 50px;
+  
+}
+.menu-container button:hover{
+  color: #fff;
+  background-color:#dc5f20 ;
 }
 .menu {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   width: 100%;
 }
 .menu-item {
   display: flex;
+  justify-content: start;
+  padding: 20px;
   align-items: center;
-  width: 200px;
+  width: 100%;
+  height: auto;
+  gap: 30px;
+  border: 1px solid #dadada;
+}
+.description-product{
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
+.description-product h3{
+  font-weight: 800;
+}
+.price{
+  width: 160px;
+  color:#f7c755
+}
+
 .scroll {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 200px;
+  gap: 10px;
+  height: 350px;
   overflow: auto;
+  width: 100%;
+  padding: 0px 5px 5px 5px;
+}
+.extra{
+  position: relative;
+  right: 17%;
 }

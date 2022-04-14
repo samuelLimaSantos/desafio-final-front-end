@@ -28,6 +28,7 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
       console.log(err);
     }
   };
+
   return (
     <div className="container-product">
       <button className="button--register--item" onClick={handleModal}>

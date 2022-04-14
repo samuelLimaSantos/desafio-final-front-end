@@ -34,7 +34,7 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
       const data: any = {
         name: name.value,
         urlImage: urlImage.value,
-        price: parseInt(price.value),
+        price: +price.value,
         idRestaurant: restaurant,
         description: description.value,
         extras: selectedExtras,

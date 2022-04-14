@@ -21,6 +21,7 @@ const Input = ({
         required={required}
         value={value}
         onChange={onChange}
+        step="any"
       />
     </div>
   );

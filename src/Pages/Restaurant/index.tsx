@@ -69,12 +69,14 @@ const Restaurant = () => {
                       <div className="description-product">
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
-                        <p>
-                          Extras:
-                          {item.extras.map((extra) => (
-                            <span>{extra.name}</span>
-                          ))}
-                        </p>
+                        {item.extras.length > 0 && (
+                          <p>
+                            Extras:
+                            {item.extras.map((extra) => (
+                              <span>{extra.name}</span>
+                            ))}
+                          </p>
+                        )}
                         <p className="price">
                           Preço:R$ {formatter.format(item.price)}
                         </p>

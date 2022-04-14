@@ -97,7 +97,10 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
         <div className="card-extra">
           <div className="add-extra">
             {selectedExtras.map((extra) => (
-              <p>{extra.name}</p>
+              <p>
+                {extra.name}
+                <button>x</button>
+              </p>
             ))}
           </div>
           <Button

@@ -1,37 +1,34 @@
 import React, { useEffect, useState } from "react";
 
-//import RestaurantForm from "../RestaurantForm";
+import axios from "../../service";
+
 import Header from "../../components/Header";
 import Recommended from "../../components/Recommended";
 import PopularRestaurants from "../../components/PopularRestaurants";
 import Footer from "../../components/Footer";
+import Destak from "../../components/Destak";
 
 const Home = () => {
-  
-  const [grayHeader, setGrayHeader] = useState(false);
+  const [detach, setDetach] = useState([]);
+  const [rest, setRest] = useState([]);
 
   useEffect(() => {
-    const scrollListener = () => {
-      if (window.scrollY > 10) {
-        setGrayHeader(true);
-      } else {
-        setGrayHeader(false);
-      }
+    const loadAll = async () => {
+      //pegando a lista inteira
+      let list = await axios.get("/rest/restaurants");
+      const detach = list.data.slice(0, 8);
+      const rest = list.data.slice(8);
+      setDetach(detach);
+      setRest(rest);
     };
-    window.addEventListener("scroll", scrollListener);
-
-    return () => {
-      window.removeEventListener("scroll", scrollListener);
-    };
+    loadAll();
   }, []);
-
 
   return (
     <div>
-      <Header gray={grayHeader} />
-      <Recommended />
-      <PopularRestaurants />
-      <Footer/>
+      <Header gray />
+      {/* <Destak detach={detach} /> */}
+      <Recommended detach={detach} />
     </div>
   );
 };

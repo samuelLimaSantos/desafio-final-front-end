@@ -1,9 +1,5 @@
 header {
-    position: fixed;
-    z-index: 999;
-    top: 0px;
-    left: 0;
-    right: 0;
+    position: relative;
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -11,6 +7,7 @@ header {
     padding: 0 30px;
     background: transparent;
     transition: all ease 0.5s;
+    margin-bottom: 60px;
 }
 
 header.gray {

@@ -11,7 +11,8 @@ interface Detach {
 interface DestakProps {
   detach: Detach[];
 }
-const Recommended: React.FC<DestakProps> = ({ detach }: DestakProps) => {
+
+const Destak: React.FC<DestakProps> = ({ detach }: DestakProps) => {
   const navigation = useNavigate();
   return (
     <div className="container-restaurant">
@@ -30,4 +31,4 @@ const Recommended: React.FC<DestakProps> = ({ detach }: DestakProps) => {
   );
 };
 
-export default Recommended;
+export default Destak;

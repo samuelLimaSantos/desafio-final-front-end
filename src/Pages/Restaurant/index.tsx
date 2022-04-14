@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Back from "../../assets/icons/button-back.svg";
 import Button from "../../components/Button";
 import ProductForm from "../../components/ProductForm";
 import { RestaurantReady } from "../../Mocks/input";
 import "./style.css";
+
 const Restaurant = () => {
   const navigation = useNavigate();
 
@@ -13,6 +14,8 @@ const Restaurant = () => {
   const handleModal = ({}) => {
     setModal(!modal);
   };
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="container">
       <div

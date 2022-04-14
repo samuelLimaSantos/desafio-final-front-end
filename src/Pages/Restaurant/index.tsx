@@ -16,6 +16,11 @@ const Restaurant = () => {
     setModal(!modal);
   };
 
+  const formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL' 
+  });
+
   const location = useLocation();
 
   useEffect(() => {
@@ -61,7 +66,7 @@ const Restaurant = () => {
                       <img src={item.urlImage} />
                       {item.name}
                     </div>
-                    <p>Preço:R$ {item.price},00</p>
+                    <p>Preço:R$ {formatter.format(item.price)}</p>
                     <div>
                       Extras:
                       {item.extras.map((extra) => (

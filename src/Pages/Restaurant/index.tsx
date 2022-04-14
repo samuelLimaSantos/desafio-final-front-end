@@ -62,6 +62,11 @@ const Restaurant = () => {
             <div className="menu-container">
               <h1>Cardápio</h1>
               <div className="scroll">
+                {!!!restaurant.products.length && (
+                  <div className="no-recipe-registered">
+                    <h4>Cardápio ainda não cadastrado</h4>
+                  </div>
+                )}
                 {restaurant.products?.map((item) => (
                   <div className="menu">
                     <div className="menu-item">

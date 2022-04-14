@@ -1,14 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from "react";
 import { InputProduct } from "../../Mocks/input";
 import Button from "../atom/Button";
 import Input from "../atom/Input";
 import axios from "../../service";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-import { ExtrasType } from '../../types/Extras';
+import { ExtrasType } from "../../types/Extras";
 
 const ProductForm = ({ handleModal, restaurant }: any) => {
-
   const [extras, setExtras] = useState<ExtrasType[]>([]);
   const [selectedExtras, setSelectedExtras] = useState<ExtrasType[]>([]);
 
@@ -19,13 +18,13 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
 
   useEffect(() => {
     getExtras();
-  }, [])
+  }, []);
 
   const getExtras = useCallback(async () => {
-    const { data: extrasData } = await axios.get('/rest/products/extras');
+    const { data: extrasData } = await axios.get("/rest/products/extras");
 
     setExtras(extrasData);
-  }, [])
+  }, []);
 
   const sendData = async (e: any) => {
     try {
@@ -47,9 +46,9 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
 
   return (
     <div className="container-product">
-      <button className="button--register--item" onClick={handleModal}>
-        X
-      </button>
+      <div className="close-modal">
+        <button onClick={handleModal}>X</button>
+      </div>
       <h2>Registre um novo item</h2>
       <form className="container--form" onSubmit={sendData}>
         {InputProduct.map((item) => (
@@ -66,36 +65,47 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
           id=""
           placeholder="Descrição do Produto"
         ></textarea>
-        <select name="extras" onChange={(element) => {
-          if (element.target.value) {
-            const selected = extras.find(extra => extra.id === element.target.value);
-            const alreadySelected = selectedExtras.find(extra => extra.id === element.target.value);
+        <label>Adicione Extras ao seu pedido (Opcional)</label>
+        <select
+          className="extras"
+          name="extras"
+          onChange={(element) => {
+            if (element.target.value) {
+              const selected = extras.find(
+                (extra) => extra.id === element.target.value
+              );
+              const alreadySelected = selectedExtras.find(
+                (extra) => extra.id === element.target.value
+              );
 
-            if (selected && !alreadySelected) {
-              const selectedArray = [...selectedExtras, selected];
+              if (selected && !alreadySelected) {
+                const selectedArray = [...selectedExtras, selected];
 
-              setSelectedExtras(selectedArray);
+                setSelectedExtras(selectedArray);
+              }
             }
-          }
-        }}>
-          {extras.map(extra => (
+          }}
+        >
+          {extras.map((extra) => (
             <>
-              <option value={extra.id}>{extra.name}</option>
+              <option className="options" value={extra.id}>
+                {extra.name}
+              </option>
             </>
           ))}
         </select>
-        {selectedExtras.map(extra => (
-          <div>
-            <p>
-              {extra.name}
-            </p>
+        <div className="card-extra">
+          <div className="add-extra">
+            {selectedExtras.map((extra) => (
+              <p>{extra.name}</p>
+            ))}
           </div>
-        ))}
-        <Button
-          className="button--register--item"
-          name="Cadastrar"
-          type="submit"
-        />
+          <Button
+            className="button--register--item"
+            name="Cadastrar"
+            type="submit"
+          />
+        </div>
       </form>
     </div>
   );

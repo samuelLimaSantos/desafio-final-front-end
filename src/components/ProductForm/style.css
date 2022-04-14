@@ -2,7 +2,6 @@
     position: fixed;
     top:0;
     right: 0;
-    width: 100vw;
     height: 100vh;
     background-color: #f7f8fa;
     width: 600px;
@@ -10,8 +9,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  
 }
-
+.add-extra {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
 .container-product h2{
     margin-top: 15px;
     margin-bottom: 15px;
@@ -19,26 +23,31 @@
 
 .container--form{
     width: 65%;
-    height: 400px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    gap: 15px;
 }
 
 .container--input{
     width: 100%;  
 }
 
-.container--input Input{
+.container--input Input,.container--form textarea,.extras{
     border: 1.5px solid #ea1d2c;
-    border-radius: 8px;
     width: 100%;
-    height: 30px;
-    
+    height: 48px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.container--form textarea{
+    padding-top: 10px;
 }
 
-.button--register--item{
+.button--register--item ,.close-modal button{
+    
     height: 35px;
     border-radius: 3px;
     text-decoration: none;
@@ -49,11 +58,31 @@
     border: none;
     cursor: pointer;
 }
+.card-extra{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    
+}
+.button--register--item{
+    width: 100%;
+}
 
 .button--register--item:hover{
     animation-name: color-click;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
+}
+
+.close-modal button{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    border-radius: 0;
+    height: 40px;
+  
 }
 
 @keyframes color-click {

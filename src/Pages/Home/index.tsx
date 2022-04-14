@@ -1,34 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import Shop from '../../components/Shop';
+import React, { useEffect, useState } from "react";
 
-import API from '../../API'
+//import RestaurantForm from "../RestaurantForm";
+import Header from "../../components/Header";
+import Recommended from "../../components/Recommended";
+import PopularRestaurants from "../../components/PopularRestaurants";
+import Footer from "../../components/Footer";
 
 const Home = () => {
-
-  const [listRestaurants, setListRestaurants] = useState([]);
-
-/*  
-    useEffect(() => {
-    const loadAll = async () => {
-      //pegando a lista inteira
-      let list = await API.getHomeList();
-      setListRestaurants(list)
-
-      loadAll();
-  }, []);
   
-*/
+  const [grayHeader, setGrayHeader] = useState(false);
+
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setGrayHeader(true);
+      } else {
+        setGrayHeader(false);
+      }
+    };
+    window.addEventListener("scroll", scrollListener);
+
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, []);
+
+
   return (
     <div>
-
-      {/* <section className='lists'>
-        {listRestaurants.map((item, key) =>(
-          <Shop key={key} title={item.title} items={item.items} />
-        ))}
-      </section> */}
-
+      <Header gray={grayHeader} />
+      <Recommended />
+      <PopularRestaurants />
+      <Footer/>
     </div>
-
   );
 };
 

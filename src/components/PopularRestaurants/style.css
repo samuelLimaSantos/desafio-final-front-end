@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Joti+One&family=Roboto:wght@400;700&display=swap');
+
+
+
+.title{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 15px;
+}
+.jasonfoods{
+    font-family: 'Joti One', 'Roboto', sans-serif;
+    color: #EA1D2C;
+    text-shadow: 1px 1px #F5EE3B;
+}
+
+.card--container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 80px;
+    padding-bottom: 100px;
+   
+}
+
+.card {
+    width: 250px;
+    height: auto;
+    position: relative;
+    /*border: 1px solid #ea1d2c;*/
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 20px;
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+
+.card > * {
+    padding: 15px;
+}
+
+.card .card--image{
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    background-position: center center;
+    background-size: cover;
+
+
+}
+
+.card .card--name{
+    padding: 20px 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 1px 0px 2px #262654;
+}
+
+
+.card:hover{
+    background: #fd8d61;
+    color: #fff;
+    box-shadow: 0px 0px 4px 3px #000000;
+}
+
+

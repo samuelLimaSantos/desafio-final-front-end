@@ -12,9 +12,6 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
   const [selectedExtras, setSelectedExtras] = useState<ExtrasType[]>([]);
 
   const navigation = useNavigate();
-  const handleForm = () => {
-    navigation(`product/${restaurant}`);
-  };
 
   useEffect(() => {
     getExtras();
@@ -39,15 +36,28 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
         extras: selectedExtras,
       };
       await axios.post("/rest/products", data);
+      handleModal(true);
     } catch (err) {
       console.log(err);
     }
   };
 
+  const removeExtra = useCallback((idExtra: string) => {
+    const indexExtra = selectedExtras.findIndex(extra => extra.id === idExtra);
+
+    if (indexExtra > -1) {
+      const newSelectedExtras = [...selectedExtras];
+      
+      newSelectedExtras.splice(indexExtra, 1);
+
+      setSelectedExtras(newSelectedExtras);
+    }
+  }, [selectedExtras]);
+
   return (
     <div className="container-product">
       <div className="close-modal">
-        <button onClick={handleModal}>X</button>
+        <button onClick={() => handleModal()}>X</button>
       </div>
       <h2>Registre um novo item</h2>
       <form className="container--form" onSubmit={sendData}>
@@ -99,7 +109,7 @@ const ProductForm = ({ handleModal, restaurant }: any) => {
             {selectedExtras.map((extra) => (
               <p>
                 {extra.name}
-                <button>x</button>
+                <button onClick={() => removeExtra(extra.id)}>x</button>
               </p>
             ))}
           </div>

@@ -12,7 +12,8 @@ const Restaurant = () => {
 
   const [restaurant, setRestaurant] = useState({} as RestaurantType);
   const [modal, setModal] = useState(false);
-  const handleModal = ({}) => {
+  const handleModal = async (shouldUpdate = false) => {
+    if (shouldUpdate) await handleRestaurantData(restaurant.id);
     setModal(!modal);
   };
 
@@ -82,7 +83,7 @@ const Restaurant = () => {
                   </div>
                 ))}
               </div>
-              <Button name="Adicionar item ao menu" onClick={handleModal} />
+              <Button name="Adicionar item ao menu" onClick={() => handleModal()} />
             </div>
           </div>
           {modal && (

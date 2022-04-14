@@ -24,6 +24,7 @@ const RestaurantForm = () => {
         responsible: responsible.value,
       };
       const resp = await axios.post("/rest/restaurants", data);
+      navigation('/');
       console.log(resp);
     } catch (err) {
       console.log(err);

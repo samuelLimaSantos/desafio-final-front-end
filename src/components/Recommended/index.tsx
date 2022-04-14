@@ -10,6 +10,7 @@ interface Detach {
 interface DestakProps {
   detach: Detach[];
 }
+
 const Recommended: React.FC<DestakProps> = ({ detach }: DestakProps) => {
   const navigation = useNavigate();
   return (

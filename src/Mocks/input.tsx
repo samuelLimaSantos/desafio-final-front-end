@@ -39,26 +39,21 @@ export const InputProduct = [
   },
 
   {
-    type: "text",
-    name: "description",
-    placeholder: "Descrição do produto",
-  },
-  {
     type: "number",
     name: "price",
     placeholder: "Preço do produto",
   },
-  {
-    extras: {
-      name: "Molho Especial",
-      price: 3,
-      type: "checkbox",
-    },
-    name: "Bacon",
-    price: 2.5,
-    type: "checkbox",
-  },
-  { name: "Cebola", price: 1.5, type: "checkbox" },
+  // {
+  //   extras: {
+  //     name: "Molho Especial",
+  //     price: 3,
+  //     type: "checkbox",
+  //   },
+  //   name: "Bacon",
+  //   price: 2.5,
+  //   type: "checkbox",
+  // },
+  // { name: "Cebola", price: 1.5, type: "checkbox" },
 ];
 
 export const RestaurantReady = [
@@ -158,57 +153,56 @@ export const PopularRestaurant = [
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória",
+    address: "Rua abcdefg, 28 - Marina da Glória",
     description: "Referência em lanches da região",
-  }, {
+  },
+  {
     name: "Luiza Doces",
     urlImage:
       "https://www.vintecontologos.com.br/wp-content/uploads/2017/05/luiza-doces-logo.jpg",
-    address:
-      "Rua abcdefg, 28 - Marina da Glória ",
+    address: "Rua abcdefg, 28 - Marina da Glória ",
     description: "Referência em lanches da região",
-  }, 
-]
+  },
+];

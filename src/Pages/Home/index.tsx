@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "../../service";
-
 import Header from "../../components/Header";
 import Recommended from "../../components/Recommended";
 import PopularRestaurants from "../../components/PopularRestaurants";
@@ -27,7 +25,7 @@ const Home = () => {
     <div>
       <Header gray />
       <Recommended detach={detach} />
-      <PopularRestaurants />
+      <PopularRestaurants rest={rest} />
       <Footer />
     </div>
   );

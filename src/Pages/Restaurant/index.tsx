@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Back from "../../assets/icons/button-back.svg";
 import Button from "../../components/atom/Button";
 import ProductForm from "../../components/ProductForm";
-import { RestaurantReady } from "../../Mocks/input";
 import axios from '../../service';
 import { RestaurantType } from "../../types/Restaurant";
 import "./style.css";
@@ -11,7 +10,6 @@ import "./style.css";
 const Restaurant = () => {
   const navigation = useNavigate();
 
-  const { name, urlImage, description, urlCover, menu } = RestaurantReady[2];
   const [restaurant, setRestaurant] = useState({} as RestaurantType);
   const [modal, setModal] = useState(false);
   const handleModal = ({}) => {
@@ -47,7 +45,7 @@ const Restaurant = () => {
       </div>
       {'id' in restaurant && (
         <div className="container-rest">
-          <img className="url-cover" src={urlCover} />
+          <img className="url-cover" src={restaurant.urlCover} />
           <div className="card-info">
             <div className="description">
               <img src={restaurant.urlLogo} alt="" />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Back from "../../assets/icons/button-back.svg";
-import Button from "../../components/Button";
+import Button from "../../components/atom/Button";
 import ProductForm from "../../components/ProductForm";
 import { RestaurantReady } from "../../Mocks/input";
 import "./style.css";

@@ -1,4 +1,4 @@
-import Logo from "../../assets/jasonfoods.png";
+import Logo from "../../../assets/jasonfoods.png";
 
 const LogoStyle = () => {
   return (

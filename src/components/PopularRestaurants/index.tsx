@@ -1,4 +1,3 @@
-import { PopularRestaurant } from "../../Mocks/input";
 import "./style.css";
 
 interface Rest {

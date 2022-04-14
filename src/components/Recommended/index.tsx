@@ -1,4 +1,3 @@
-import { RestaurantReady } from "../../Mocks/input";
 import Selo from "../../assets/icons/selo.svg";
 import "./style.css";
 import { useNavigate } from "react-router-dom";

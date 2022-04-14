@@ -1,8 +1,7 @@
-import React from "react";
-import jason_foods from "../../assets/jasonfoods.png";
-import icon_foods from "../../assets/fastdelivery.png";
+import Logo from "../../assets/jasonfoods.png";
+import Animation from "../../assets/fastdelivery.png";
 import "./style.css";
-import Button from "../Button";
+import Button from "../atom/Button";
 import { useNavigate } from "react-router-dom";
 
 interface Header {
@@ -16,8 +15,8 @@ export default ({ gray }: Header) => {
     <header className={gray ? "gray" : ""}>
       <div className="header--logo">
         <a onClick={() => navigate("/")}>
-          <img src={jason_foods} alt="jason foods logo" />
-          <img src={icon_foods} alt="icon-foods" id="run" />
+          <img src={Logo} alt="jason foods logo" />
+          <img src={Animation} alt="icon-foods" id="run" />
         </a>
       </div>
       <div className="header--button">

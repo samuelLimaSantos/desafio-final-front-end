@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "../../service";
 import Header from "../../components/Header";
 import Recommended from "../../components/Recommended";

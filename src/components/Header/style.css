@@ -44,6 +44,8 @@ header.gray {
 }
 
 .header--button button {
+    width: 130px;
+    height: 38px;
     text-decoration: none;
     padding: 5px 10px 8px 10px;
     border-radius: 5px;
